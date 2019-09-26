@@ -1,7 +1,7 @@
 {
-  "name": "just-silly",
-  "version": "0.1.4",
-  "description": "Stuff I can't find in any other library",
+  "name": "just-simple",
+  "version": "0.1.0",
+  "description": "Simple utilities for diagnostics and logging",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -39,7 +39,7 @@
     "Pootl"
   ],
   "author": "Karl Lew",
-  "homepage": "https://github.com/oyamist/just-silly",
+  "homepage": "https://github.com/oyamist/just-simple",
   "license": "MIT",
   "eslintConfig": {
     "root": true,

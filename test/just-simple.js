@@ -1,6 +1,6 @@
-(typeof describe === 'function') && describe("just-silly", function() {
+(typeof describe === 'function') && describe("just-simple", function() {
     const should = require("should");
-    const js = require('../index').JustSilly.js;
+    const js = require('../index').JustSimple.js;
 
     class Observation {
         constructor(tag, value, text) {

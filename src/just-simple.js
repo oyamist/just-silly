@@ -2,11 +2,11 @@
     const logger = require('./logger');
 
 
-    class JustSilly {
+    class JustSimple {
         constructor(opts = {}) {
         }
 
-        static get js() { return new JustSilly(); }
+        static get js() { return new JustSimple(); }
 
         get logger() { return logger; }
 
@@ -45,6 +45,6 @@
 
     }
 
-    module.exports = exports.JustSilly = JustSilly;
+    module.exports = exports.JustSimple = JustSimple;
 })(typeof exports === "object" ? exports : (exports = {}));
 

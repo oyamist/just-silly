@@ -1,11 +1,10 @@
-A library of simple things that are hard to find in other libraries.
-It's just silly to rewrite these.
+Simple utilities for diagnostics and logging
 
 ### Installation
 
 ```bash
-git clone https://github.com/oyamist/just-silly.git
-cd just-silly
+git clone https://github.com/oyamist/just-simple.git
+cd just-simple
 npm install
 npm run test
 ```
@@ -14,7 +13,7 @@ npm run test
 Use `js.simpleString` to generate a simple string for a data value:
 
 ```js
-const js = require('just-silly').JustSilly.js;
+const js = require('just-simple').JustSimple.js;
 var addr = {city: "SFO");
 js.simpleString(addr); // {city:SFO}
 ```
