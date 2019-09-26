@@ -18,6 +18,10 @@
         }
     }
 
+    it("TESTTESTlogger calls winston logger", () => {
+        js.logger.info("Hello world");
+    });
+
     it("TESTTESTsimpleString(value) summarizes values", ()=>{
         var addr = {
             city: "SFO"

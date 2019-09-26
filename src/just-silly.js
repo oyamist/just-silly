@@ -1,10 +1,14 @@
 (function(exports) {
+    const logger = require('./logger');
+
 
     class JustSilly {
         constructor(opts = {}) {
         }
 
         static get js() { return new JustSilly(); }
+
+        get logger() { return logger; }
 
         simpleString(value) {
             if (value instanceof Array) {
