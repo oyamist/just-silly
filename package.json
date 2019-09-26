@@ -1,6 +1,6 @@
 {
   "name": "just-silly",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Stuff I can't find in any other library",
   "main": "index.js",
   "directories": {

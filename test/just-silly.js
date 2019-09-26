@@ -1,9 +1,6 @@
 (typeof describe === 'function') && describe("just-silly", function() {
     const should = require("should");
-    const {
-        JustSilly,
-    } = require('../index');
-    var js = new JustSilly();
+    const js = require('../index').JustSilly.js;
 
     class Observation {
         constructor(tag, value, text) {

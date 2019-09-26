@@ -4,6 +4,8 @@
         constructor(opts = {}) {
         }
 
+        static get js() { return new JustSilly(); }
+
         simpleString(value) {
             if (value instanceof Array) {
                 var a = value.map((d,i)=> d instanceof Array 
