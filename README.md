@@ -13,7 +13,7 @@ npm run test
 Use `js.simpleString` to generate a simple string for a data value:
 
 ```js
-const js = require('just-simple').JustSimple.js;
+const { js } = require('just-simple').JustSimple;
 var addr = {city: "SFO");
 js.simpleString(addr); // {city:SFO}
 ```
@@ -49,3 +49,15 @@ var ob2 = new Observation('address', addr, 'an object');
 js.simpleString([ob1,[ob2]]);
 // [[<size:42>], <address:{city:SFO}>]
 ```
+
+### Example `logger`
+Setting up Winston consistently across different packages is tedious. 
+JustSimple.logger provides a bare-bones utilitarian Winston logger instance.
+
+```js
+require { logger } = require("just-simple").JustSimple;
+
+logger.info("Hello world");
+// 20190926 08:40:17 I Hello world
+```
+
