@@ -8,10 +8,7 @@
 
         simpleString(value) {
             if (value instanceof Array) {
-                var a = value.map((d,i)=> d instanceof Array 
-                    ? `${this.simpleString(d)}` 
-                    : ""+d
-                );
+                var a = value.map((d,i)=> this.simpleString(d));
                 return `[${a.join(", ")}]`;
             }
             if (value === undefined) {
@@ -24,12 +21,13 @@
                 return value;
             }
             if (value.toString !== {}.toString) {
-                return value.toString();
+                return `${value.toString()}`;
             }
             var keys = Object.keys(value);
             if (keys && keys.length) {
                 var kv = keys.map(k => {
-                    var v = this.simpleString(value[k]);
+                    let vk = value[k]; 
+                    let v = this.simpleString(vk);
                     return `${k}:${v}`;
                 });
                 var s = kv.join(', ');

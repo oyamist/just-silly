@@ -14,11 +14,17 @@
                 tag,
                 value,
             } = this;
-            return `${tag}:${value}`;
+            return `<${tag}:${js.simpleString(value)}>`;
         }
     }
 
-    it("simpleString(value) summarizes values", ()=>{
+    it("TESTTESTsimpleString(value) summarizes values", ()=>{
+        var addr = {
+            city: "SFO"
+        };
+        var ob1 = new Observation('size', 42);
+        var ob2 = new Observation('address',addr);
+
         should(js.simpleString(null)).equal('null');
         should(js.simpleString(undefined)).equal('undefined');
         should(js.simpleString(1.2)).equal('1.2');
@@ -29,12 +35,13 @@
         should(js.simpleString(['a',1])).equal('[a, 1]');
         should(js.simpleString(['a',[2,[3]],4]))
             .equal('[a, [2, [3]], 4]');
-        var ob1 = new Observation('size', 42);
-        var ob2 = new Observation('color','red');
-        should(js.simpleString(ob1)).equal('size:42');
-        should(js.simpleString([[ob1],ob2]))
-            .equal('[[size:42], color:red]');
         should(js.simpleString({a:1})).equal('{a:1}');
+        should(js.simpleString(addr)).equal('{city:SFO}');
+
+        should(ob1.toString()).equal('<size:42>');
+        should(js.simpleString([[ob1],ob2]))
+            .equal('[[<size:42>], <address:{city:SFO}>]');
+        should(js.simpleString(ob1)).equal('<size:42>');
     });
 
 })
