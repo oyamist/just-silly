@@ -1,4 +1,5 @@
 A library of simple things that are hard to find in other libraries.
+It's just silly to rewrite these.
 
 ### Installation
 
