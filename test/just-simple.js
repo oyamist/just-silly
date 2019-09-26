@@ -1,6 +1,10 @@
 (typeof describe === 'function') && describe("just-simple", function() {
     const should = require("should");
-    const js = require('../index').JustSimple.js;
+    const {
+        js,
+        logger,
+    } = require('../index').JustSimple;
+
 
     class Observation {
         constructor(tag, value, text) {

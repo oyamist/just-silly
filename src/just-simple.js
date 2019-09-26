@@ -7,6 +7,7 @@
         }
 
         static get js() { return new JustSimple(); }
+        static get logger() { return logger; }
 
         get logger() { return logger; }
 
