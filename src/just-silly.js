@@ -11,6 +11,9 @@
                 var a = value.map((d,i)=> this.simpleString(d));
                 return `[${a.join(", ")}]`;
             }
+            if (value instanceof Date) {
+                return value.toLocaleDateString();
+            }
             if (value === undefined) {
                 return 'undefined';
             }

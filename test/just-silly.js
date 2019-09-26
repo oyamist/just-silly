@@ -37,6 +37,8 @@
             .equal('[a, [2, [3]], 4]');
         should(js.simpleString({a:1})).equal('{a:1}');
         should(js.simpleString(addr)).equal('{city:SFO}');
+        var now = new Date(2019, 9, 22, 1, 2, 3);
+        should(js.simpleString(now)).equal(now.toLocaleDateString());
 
         should(ob1.toString()).equal('<size:42>');
         should(js.simpleString([[ob1],ob2]))

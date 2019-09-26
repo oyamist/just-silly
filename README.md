@@ -1,4 +1,4 @@
-
+A library of simple things that are hard to find in other libraries.
 
 ### Installation
 
