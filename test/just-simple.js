@@ -7,10 +7,11 @@
 
 
     class Observation {
-        constructor(tag, value, text) {
+        constructor(tag, value, text, opts) {
             this.tag = tag;
             this.value = value;
             this.text = text;
+            logger.logInstance(this, opts); // decorate instance
         }
 
         toString() {
@@ -24,6 +25,27 @@
 
     it("TESTTESTlogger calls winston logger", () => {
         js.logger.info("Hello world");
+    });
+
+    it("TESTTESTlogInstance() decorates instance with log method", () => {
+        // default logLevel
+        var obs = new Observation('a', 1, 'text', {});
+        should(obs.log('injected log("hello-info")')).equal('info');
+        should(obs).properties({logLevel:'info'});
+
+        // custom logLevel
+        var logLevel = 'warn';
+        var opts = {
+            logLevel, // Winston logging level
+            otherProperty: 'some-value',
+        };
+        var obs = new Observation('a', 1, 'text', opts);
+        should(obs).properties({logLevel});
+        should(obs.log('injected log("hello-warn")')).equal(logLevel);
+
+        // dynamic logLevel
+        obs.logLevel = 'error';
+        should(obs.log('injected log("hello-error")')).equal('error');
     });
 
     it("TESTTESTsimpleString(value) summarizes values", ()=>{

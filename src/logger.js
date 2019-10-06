@@ -36,6 +36,26 @@
         //_logger.add(new transports.Console());
     }
 
+    Object.defineProperty(_logger, "logInstance", {
+        value: (inst, opts={}) => {
+            let logLevel = opts.hasOwnProperty("logLevel")
+                ? opts.logLevel 
+                : 'info';
+            Object.defineProperty(inst, "logLevel", {
+                enumerable: true,
+                writable: true,
+                value: logLevel,
+            });
+            Object.defineProperty(inst, "log", {
+                value: (...args) => {
+                    let level = inst.logLevel;
+                    level && _logger[level] .apply(_logger, args);
+                    return level;
+                },
+            });
+        },
+    });
+
     module.exports = exports.logger = _logger;
 
 })(typeof exports === "object" ? exports : (exports = {}));
