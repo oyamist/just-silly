@@ -1,15 +1,29 @@
 (function(exports) {
-    const logger = require('./logger');
-
-
     class JustSimple {
         constructor(opts = {}) {
         }
 
         static get js() { return new JustSimple(); }
-        static get logger() { return logger; }
+        static get logger() { 
+            return require('./logger'); 
+        }
+        static get LOCAL_DIR() {
+            var fs = require('fs');
+            var path = require('path');
+            var appdir = __dirname.replace(/\/node_modules\/.*/, '');
+            if (appdir === __dirname) {
+                appdir = path.join(__dirname, '..');
+            }
+            var local = path.join(appdir, 'local');
+            if (!fs.existsSync(local)) {
+                fs.mkdirSync(local);
+            }
 
-        get logger() { return logger; }
+            return local;
+        }
+
+        get logger() { return JustSimple.logger; }
+        get LOCAL_DIR() { return JustSimple.LOCAL_DIR; }
 
         simpleString(value) {
             if (value instanceof Array) {

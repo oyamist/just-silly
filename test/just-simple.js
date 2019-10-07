@@ -1,9 +1,15 @@
 (typeof describe === 'function') && describe("just-simple", function() {
     const should = require("should");
+    const path = require('path');
+    const {
+        JustSimple,
+    } = require('../index');
     const {
         js,
         logger,
+        LOCAL_DIR,
     } = require('../index').JustSimple;
+    const LOCAL = path.join(__dirname, '..', 'local');
 
 
     class Observation {
@@ -74,6 +80,14 @@
         should(js.simpleString([[ob1],ob2]))
             .equal('[[<size:42>], <address:{city:SFO}>]');
         should(js.simpleString(ob1)).equal('<size:42>');
+    });
+
+    it ("TESTTESTLOCAL_DIR return path of application local directory", ()=>{
+        should(LOCAL_DIR).equal(LOCAL);
+        should(js.LOCAL_DIR).equal(LOCAL);
+
+        var TestLocal = require(path.join(__dirname, 'node_modules', 'test-local'));
+        should(TestLocal.LOCAL_DIR).equal(LOCAL);
     });
 
 })

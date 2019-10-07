@@ -55,9 +55,23 @@ Setting up Winston consistently across different packages is tedious.
 JustSimple.logger provides a bare-bones utilitarian Winston logger instance.
 
 ```js
-require { logger } = require("just-simple").JustSimple;
+const { logger } = require("just-simple").JustSimple;
 
 logger.info("Hello world");
 // 20190926 08:40:17 I Hello world
 ```
 
+### Example `LOCAL_DIR`
+NodeJs applications often need application local file storage. 
+Since the application folder is a well-known location created 
+during `git clone ...`, it's simple and convenient to just create
+a `local` folder for application local file storage.
+Adding `local/` to `.gitignore` assures that the contents of `local` remain local.
+This convention can also work for NodeJs libraries that store
+information in the calling application's `local` folder.
+`JustSimple.LOCAL_DIR` returns the application's local folder
+for a NodeJs library or application.
+
+```js
+const { LOCAL_DIR } = require('just-simple').JustSimple;
+```
