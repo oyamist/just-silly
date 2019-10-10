@@ -41,6 +41,7 @@
             let logLevel = opts.hasOwnProperty("logLevel")
                 ? opts.logLevel 
                 : 'info';
+            let addName = opts.addName !== false;
             Object.defineProperty(inst, "logLevel", {
                 enumerable: true,
                 writable: true,
@@ -48,7 +49,10 @@
             });
             Object.defineProperty(inst, "log", {
                 value: (...args) => {
+                    let name = inst.name || inst.constructor.name;
                     let level = inst.logLevel;
+                    args = args.slice();
+                    addName && (args[0] = `${name}: ${args[0]}`);
                     level && _logger[level] .apply(_logger, args);
                     return level;
                 },
