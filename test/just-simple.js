@@ -82,12 +82,9 @@
         should(js.simpleString(ob1)).equal('<size:42>');
     });
 
-    it ("TESTTESTLOCAL_DIR return path of application local directory", ()=>{
+    it ("TESTTESTLOCAL_DIR => application local directory", ()=>{
         should(LOCAL_DIR).equal(LOCAL);
         should(js.LOCAL_DIR).equal(LOCAL);
-
-        var TestLocal = require(path.join(__dirname, 'node_modules', 'test-local'));
-        should(TestLocal.LOCAL_DIR).equal(LOCAL);
     });
 
 })
