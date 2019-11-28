@@ -1,6 +1,7 @@
 (function(exports) {
     class JustSimple {
         constructor(opts = {}) {
+            this.s = this.simpleString; // synonym
         }
 
         static get js() { return new JustSimple(); }

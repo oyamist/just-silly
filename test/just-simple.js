@@ -81,6 +81,9 @@
             .equal('[[<size:42>], <address:{city:SFO}>]');
         should(js.simpleString(ob1)).equal('<size:42>');
     });
+    it("TESTTESTs(value) summarizes values", ()=>{
+        should(js.s).equal(js.simpleString);
+    });
 
     it ("TESTTESTLOCAL_DIR => application local directory", ()=>{
         should(LOCAL_DIR).equal(LOCAL);
