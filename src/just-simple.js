@@ -40,6 +40,11 @@
             if (value === null) {
                 return 'null';
             }
+            if (typeof value === 'number') {
+                return value === `${value}` 
+                    ? value 
+                    : value.toFixed(5).replace(/\.?0*$/,'');
+            }
             if (typeof value === 'string') {
                 return value;
             }

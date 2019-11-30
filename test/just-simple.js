@@ -64,6 +64,7 @@
         should(js.simpleString(null)).equal('null');
         should(js.simpleString(undefined)).equal('undefined');
         should(js.simpleString(1.2)).equal('1.2');
+        should(js.simpleString(1.23456789000)).equal('1.23457');
         should(js.simpleString('abc')).equal('abc');
         should(js.simpleString([])).equal('[]');
         should(js.simpleString(['a'])).equal('[a]');
