@@ -1,6 +1,6 @@
 {
   "name": "just-simple",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Simple utilities for diagnostics and logging",
   "main": "index.js",
   "directories": {
@@ -8,9 +8,9 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "winston": "^3.0.0",
-    "mocha": "^5.2.0",
-    "should": "^11.2.0"
+    "mocha": "^7.1.1",
+    "should": "^11.2.0",
+    "winston": "^3.0.0"
   },
   "scripts": {
     "test": "npm run test:verbose",
