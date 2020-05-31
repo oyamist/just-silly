@@ -9,7 +9,7 @@
             return require('./logger'); 
         }
         static get LOCAL_DIR() {
-            var fs = require('fs');
+            var fs = eval("require('fs')"); // Fool nuxt
             var path = require('path');
             var appdir = __dirname.replace(/\/node_modules\/.*/, '');
             if (appdir === __dirname) {
