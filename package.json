@@ -1,6 +1,6 @@
 {
   "name": "just-simple",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Simple utilities for diagnostics and logging",
   "main": "index.js",
   "directories": {
