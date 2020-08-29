@@ -30,7 +30,11 @@
     }
 
     it("TESTTESTlogger calls winston logger", () => {
-        js.logger.info("Hello world");
+        //js.logger.level = "debug";
+        js.logger.info("Hello world-info");
+        js.logger.debug("Hello world-debug");
+        js.logger.warn("Hello world-warn");
+        js.logger.error("Hello world-error");
     });
 
     it("TESTTESTlogInstance() decorates instance with log method", () => {
